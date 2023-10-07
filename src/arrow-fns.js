@@ -5,7 +5,7 @@
 // Ex.:
 //   giveMeTwo();
 //   => 2
-const giveMeTwo = undefined;
+const giveMeTwo = () => 2;
 
 // Set the value of addNums to an arrow function that takes in two numbers and
 // returns their sum.
@@ -13,7 +13,7 @@ const giveMeTwo = undefined;
 // Ex.:
 //   addNums(1, 2);
 //   => 3
-const addNums = undefined;
+const addNums = (a,b) => a + b;
 
 // Set the value of max to an arrow function that takes in two numbers and
 // returns the largest one.
@@ -21,7 +21,11 @@ const addNums = undefined;
 // Ex.:
 //   max(1, 2);
 //   => 2
-const max = undefined;
+const max = (num1,num2) =>
+ {if(num1 > num2){
+    return num1;
+ } else{return num2}
+};
 // Note: you can also do this on one line:
 // const max = (a, b) => (a >= b ? a : b);
 
