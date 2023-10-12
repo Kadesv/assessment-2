@@ -1,0 +1,17 @@
+th, td{
+    padding: 5px;
+    color: white;
+    border: solid white;
+}
+body{
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+
+div{
+    margin: 10px 0 0 0;
+}
+table{
+    margin: 50px 0 50px 0; 
+}
