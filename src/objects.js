@@ -96,8 +96,7 @@ function translateToPirateTalk(phrase) {
 //   wordCount('hello world')
 //   => { hello: 1, world: 1 }
 function wordCount(str) {
-    const words = str.split(' ');
-
+  const words = str.split(' ');
   const wordCountMap = words.reduce((countMap, word) => {
     countMap[word] = (countMap[word] || 0) + 1;
     return countMap;
@@ -125,7 +124,10 @@ function wordCount(str) {
 //     }
 //   }, 1);
 //   => true
-function isBugAvailable(bug, month) { }
+function isBugAvailable(bug, month) {
+  const {rarity,months} = bug.availability;
+  return (months.includes(month))
+}
 
 // Given an array of objects representing bugs, return an object that'll be
 // used to build a calendar. The keys of the object should be the months of the
@@ -168,7 +170,24 @@ function isBugAvailable(bug, month) { }
 //     12: [],
 //   }
 
-function buildBugHuntCalendar(bugs) { }
+function buildBugHuntCalendar(bugs) {
+  const obj = {};
+  for (let bug of bugs) {
+    for (let month = 1; month <= 12; month++) {
+      if (isBugAvailable(bug, month)) {
+        obj.month = [bug.name];
+      }
+      else{
+        obj.month = [];
+      }
+      return obj;
+    }
+  
+  return obj;
+    
+  }
+}
+
 
 export {
   buildBugHuntCalendar,
